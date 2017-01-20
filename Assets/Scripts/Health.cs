@@ -10,16 +10,16 @@ namespace Assets.Scripts {
 		}
 		
 		public int healt;
-		public HealtCondition _healtCondition;
+		public HealtCondition healtCondition;
 
 		void Start() {
-			_healtCondition = HealtCondition.Alive;
+			healtCondition = HealtCondition.Alive;
 		}
 
 		public void Damaged(float damage) {
 			healt -= (int) damage;
 			if (healt <= 0) {
-				_healtCondition = HealtCondition.Death;
+				healtCondition = HealtCondition.Death;
 			}
 		}
 	}

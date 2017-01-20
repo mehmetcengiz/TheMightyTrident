@@ -21,7 +21,6 @@ namespace Assets.Scripts {
 		}
 
 		public float GetPower() {
-
 			return _wavePower;
 		}
 	}

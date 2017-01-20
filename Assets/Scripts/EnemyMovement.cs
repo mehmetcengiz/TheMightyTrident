@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
-namespace Assets._Scripts {
-	public class EnemyController : MonoBehaviour {
+namespace Assets.Scripts {
+	public class EnemyMovement : MonoBehaviour {
 
 		public float speed = 2f;
 

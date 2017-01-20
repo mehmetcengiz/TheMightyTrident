@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets._Scripts {
+namespace Assets.Scripts {
 	public class WaveSpawner : MonoBehaviour {
 
 		public GameObject wave;

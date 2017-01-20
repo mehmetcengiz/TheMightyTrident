@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
-
-namespace Assets {
+namespace Assets.Scripts {
 	public class SpawnPoints : MonoBehaviour {
 
 		public GameObject enemy;

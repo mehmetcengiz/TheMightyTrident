@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets._Scripts {
+namespace Assets.Scripts {
 	public class Shredder : MonoBehaviour {
 
 		void OnTriggerEnter(Collider collider) {

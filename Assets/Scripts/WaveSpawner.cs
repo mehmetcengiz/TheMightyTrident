@@ -7,9 +7,13 @@ namespace Assets.Scripts {
 		public float _maxPower = 5f;
 
 		private float _power;
+		private ShootPoint _shootingPoint;
+		private Animator _animator;
 
 		void Start() {
 			_power = 0f;
+			_shootingPoint = GetComponentInChildren<ShootPoint>();
+			_animator = GetComponent<Animator>();
 		}
 
 		void Update() {
@@ -18,14 +22,18 @@ namespace Assets.Scripts {
 				if (_power > _maxPower)
 					_power = _maxPower;
 			}else if (Input.GetKeyUp(KeyCode.Space)) {
-				WaveAttack(_power);
-				_power = 0f;
+				StartAttack();
 			}
 		}
 
-		void WaveAttack(float power) {
-			GameObject newWaveGameObject = Instantiate(wave,transform.position,Quaternion.identity);
-			newWaveGameObject.GetComponent<Wave>().SetPower(power);
+		void StartAttack() {
+			_animator.SetTrigger("attackTrigger");
+		}
+
+		public void WaveAttack() {
+			GameObject newWaveGameObject = Instantiate(wave,_shootingPoint.transform.position,Quaternion.identity);
+			newWaveGameObject.GetComponent<Wave>().SetPower(_power);
+			_power = 0f;
 		}
 		
 

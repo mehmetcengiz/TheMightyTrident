@@ -22,7 +22,6 @@ namespace Assets.Scripts {
 				healtCondition = HealtCondition.Death;
 				Destroy(transform.gameObject); // TODO later change this with animation.
 			}
-			print("Healt condition is " + healtCondition);
 		}
 	}
 }

@@ -30,8 +30,12 @@ namespace Assets.Scripts {
 			_animator.SetTrigger("attackTrigger");
 		}
 
-		public void WaveAttack() {
-			GameObject newWaveGameObject = Instantiate(wave,_shootingPoint.transform.position,Quaternion.identity);
+		public void WaveAttack()
+		{
+			var shootingPoint = new Vector3(0,0,0);
+			shootingPoint = _shootingPoint.transform.position;
+			shootingPoint += new Vector3(0, _power / 13, 0);
+			GameObject newWaveGameObject = Instantiate(wave,shootingPoint,Quaternion.identity);
 			newWaveGameObject.GetComponent<Wave>().SetPower(_power);
 			_power = 0f;
 		}

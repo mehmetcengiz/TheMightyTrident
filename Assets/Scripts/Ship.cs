@@ -37,7 +37,6 @@ namespace Assets.Scripts {
 			}
 		}
 
-
 		void PerformLowerPhysics() {
 			_rigidbody.useGravity = true;
 			_rigidbody.velocity = Vector3.up;

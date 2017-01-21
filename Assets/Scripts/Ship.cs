@@ -5,6 +5,7 @@ namespace Assets.Scripts {
 
 		void OnTriggerEnter(Collider collider) {
 			PerformPhysics();
+            print(collider.transform.name);
 			GetComponent<Enemy>().GotWaved(collider.GetComponent<Wave>().GetPower());
 		}
 

@@ -20,6 +20,18 @@ namespace Assets.Scripts {
 			_speedByPower = _wavePower < 3 ? 3f : _wavePower;
 		}
 
+		void OnTriggerEnter(Collider collider) {
+
+			if (collider.transform.tag == "Crashable") {
+				Invoke("LaunchDestroy", 0.2f);
+			}
+		}
+
+		void LaunchDestroy() {
+			Destroy(transform.gameObject);
+			print("Destroyed");
+		}
+
 		public float GetPower() {
 			return _wavePower;
 		}

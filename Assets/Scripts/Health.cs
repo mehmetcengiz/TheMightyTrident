@@ -20,7 +20,6 @@ namespace Assets.Scripts {
 			healt -= (int) damage;
 			if (healt <= 0) {
 				healtCondition = HealtCondition.Death;
-				Destroy(transform.gameObject); // TODO later change this with animation.
 			}
 		}
 	}

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 namespace Assets.Scripts {
-	public class Ship : MonoBehaviour {
+	public class Plane : MonoBehaviour {
 
 		void OnTriggerEnter(Collider collider) {
 			PerformPhysics();

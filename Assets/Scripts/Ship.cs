@@ -10,8 +10,6 @@ namespace Assets.Scripts {
 
 		void PerformPhysics() {
 			//Todo Perform ship physics.
-			//Launch to air
-			// Destroy objects if crash something.
 		}
 	}
 }

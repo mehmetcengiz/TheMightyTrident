@@ -45,6 +45,7 @@ namespace Assets.Scripts {
 		void PerformPowerfulPhysics() {
 			_rigidbody.useGravity = true;
 			_rigidbody.velocity = Vector3.up * _speedOfShip * 2.5f;
+			GetComponent<EnemyMovement>().GetRotated();
 		}
 	}
 }

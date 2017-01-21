@@ -18,7 +18,8 @@ namespace Assets.Scripts {
 			if (Time.timeSinceLevelLoad - _lastTimeSpawned > _randomSpawnSecond) {
 				_randomSpawnSecond= Random.Range(minSpawnTime, maxSpawnTime);
 				_lastTimeSpawned = Time.timeSinceLevelLoad;
-				Instantiate(enemy, transform.position, Quaternion.identity);
+				if(enemy)
+					Instantiate(enemy, transform.position, Quaternion.identity);
 			}
 		}
 	}

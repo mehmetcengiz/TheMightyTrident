@@ -6,7 +6,7 @@ namespace Assets.Scripts {
 		public float scaleByPower = 0.5f;
 
 		private float _wavePower;
-		private float _speedByPower = 0;
+		private float _speedByPower;
 	
 		void Update () {
 			transform.position += Vector3.right * _speedByPower * Time.deltaTime;
@@ -29,7 +29,6 @@ namespace Assets.Scripts {
 
 		void LaunchDestroy() {
 			Destroy(transform.gameObject);
-			print("Destroyed");
 		}
 
 		public float GetPower() {

@@ -4,12 +4,10 @@ namespace Assets.Scripts {
 	public class Player : MonoBehaviour {
 
 		private Animator _playerAnimator;
-		private Rigidbody _rigidbody;
 		private Health myHealth;
 
 		void Start() {
 			_playerAnimator = GetComponent<Animator>();
-			_rigidbody = GetComponent<Rigidbody>();
 			myHealth = GetComponent<Health>();
 		}
 

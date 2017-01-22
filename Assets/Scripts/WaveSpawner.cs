@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 namespace Assets.Scripts {
 	public class WaveSpawner : MonoBehaviour {
@@ -17,11 +18,11 @@ namespace Assets.Scripts {
 		}
 
 		void Update() {
-			if (Input.GetKey(KeyCode.Space)) {
+			if (CrossPlatformInputManager.GetButton("Fire1")) {
 				_power += 0.1f;
 				if (_power > _maxPower)
 					_power = _maxPower;
-			}else if (Input.GetKeyUp(KeyCode.Space)) {
+			}else if (CrossPlatformInputManager.GetButtonUp("Fire1")) {
 				StartAttack();
 			}
 		}

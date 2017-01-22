@@ -3,14 +3,22 @@
 namespace Assets.Scripts {
 	public class Ship : MonoBehaviour {
 
+		public AudioClip shipDestroySound;
+		public AudioClip shipOnJumpSound;
+
+
 		private Rigidbody _rigidbody;
 		private float _speedOfShip = 1f;
-		private bool _performedPowerfulPhysics;
 		private Animator _animator;
+		
+
+		private AudioSource _audioSource;
 
 		void Start() {
 			_rigidbody = GetComponent<Rigidbody>();
 			_animator = GetComponent<Animator>();
+			_audioSource = GetComponent<AudioSource>();
+
 		}
 
 		void OnTriggerEnter(Collider collider) {
@@ -43,6 +51,10 @@ namespace Assets.Scripts {
 		}
 
 		void PerformPowerfulPhysics() {
+			_audioSource.clip = shipOnJumpSound;
+			if (!_audioSource.isPlaying) {
+				_audioSource.Play();
+			}
 			_rigidbody.useGravity = true;
 			_rigidbody.velocity = Vector3.up * _speedOfShip * 2.5f;
 			GetComponent<EnemyMovement>().GetRotated();

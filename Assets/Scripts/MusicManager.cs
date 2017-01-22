@@ -16,7 +16,6 @@ namespace Assets.Scripts {
 			// If a MusicPlayer Already exists
 			if (instance != null && instance != this) {
 				Destroy(gameObject);
-				print("Duplicate music player self destructing");
 			}
 			else {
 				// Don't destroy this game object between scenes (i.e play music all the time between scenes)
@@ -32,22 +31,18 @@ namespace Assets.Scripts {
 		void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode) {
 			_music.Stop();
 			if (SceneManager.GetActiveScene().buildIndex == 0) {
-				Debug.Log("MusicPlayer: Loaded Level " + SceneManager.GetActiveScene().buildIndex);
 				_music.clip = startClip;
 				_music.loop = true;
 			}
 			if (SceneManager.GetActiveScene().buildIndex == 1) {
-				Debug.Log("MusicPlayer: Loaded Level " + SceneManager.GetActiveScene().buildIndex);
 				_music.clip = gameClip;
 				_music.loop = true;
 			}
 			if (SceneManager.GetActiveScene().buildIndex == 4) {
-				Debug.Log("MusicPlayer: Loaded Level " + SceneManager.GetActiveScene().buildIndex);
 				_music.clip = lostClip;
 				_music.loop = false;
 			}
 			if (SceneManager.GetActiveScene().buildIndex == 5) {
-				Debug.Log("MusicPlayer: Loaded Level " + SceneManager.GetActiveScene().buildIndex);
 				_music.clip = lostClip;
 				_music.loop = false;
 			}

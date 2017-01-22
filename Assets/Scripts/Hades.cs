@@ -3,6 +3,8 @@
 namespace Assets.Scripts {
 	public class Hades : MonoBehaviour {
 
+		public GameObject platformGameObject;
+
 		private Health _hadesHealth;
 		private bool _isDeath;
 		private Rigidbody _rigidBody;
@@ -16,7 +18,7 @@ namespace Assets.Scripts {
 
 		void Update () {
 
-			_defaultPosition = FindObjectOfType<Platform>().transform.position;
+			_defaultPosition = platformGameObject.transform.position;
 			_defaultPosition.y += 1.4f;
 			if (_isDeath) {
 				transform.rotation *= Quaternion.Euler(0, 0, 2);
